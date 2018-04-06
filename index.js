@@ -1,6 +1,6 @@
 ﻿/**
  * Created by bcuser on 4/4/18.
- */
+ */ 
 var dice1;
 var dice2;
 var winOrLose;
@@ -10,9 +10,9 @@ var balance = document.getElementById("balance");
 var currentTurn = 0;
 var turnCount = document.getElementById("turnCount");
 var status = document.getElementById("status");
-var message;
+var message = "GAME OVER!";
 var ButtonBet = document.getElementById("ButtonBet");
-
+status.style.display = 'none';
 
 function buttonClicked() {
     if (userBalance > 0) { // checking that the userBalance is greater than 0 (#5 of homework)
@@ -84,7 +84,7 @@ function buttonClicked() {
     // #3 of homework instructions - determine a win or lose for each roll.
     // #4 of homework instructions - adjusting balance and turn counter
     // ====================================================================================
-
+        rollValue = dice1 + dice2; // calculating the total value of the dice rolled
         if(dice1 === dice2 || rollValue === 7 || rollValue === 11) {
             winOrLose = true;
             console.log(`player winOrLose in if ${winOrLose}`);
@@ -101,11 +101,9 @@ function buttonClicked() {
         } // end of nested if statement
         balance.innerHTML = userBalance;
         turnCount.innerHTML = currentTurn;
-    }
-    else {
-        ButtonBet.style.display = 'none';
-        message = "Game Over!";
-        console.log(message);
-        status.innerHTML = message;
+        if (userBalance === 0) {
+            ButtonBet.style.display = 'none'; // hides the button however it hides if after one more click
+            status.style.display = 'block'; // the message is not displaying
+        }
     } // end of main if statement
 } // end of buttonClicked function
