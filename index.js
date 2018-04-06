@@ -98,14 +98,14 @@ function buttonClicked() {
             userBalance = userBalance - 1;
             console.log(`player balance is $${userBalance}`);
             currentTurn = currentTurn +1;
-        } // end of if statement
+        } // end of nested if statement
         balance.innerHTML = userBalance;
         turnCount.innerHTML = currentTurn;
-    } // end of if statement
+    }
     else {
         ButtonBet.style.display = 'none';
         message = "Game Over!";
         console.log(message);
         status.innerHTML = message;
-    }
+    } // end of main if statement
 } // end of buttonClicked function
