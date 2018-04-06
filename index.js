@@ -4,18 +4,19 @@
 var dice1;
 var dice2;
 var winOrLose;
-var rollValue = dice1 + dice2;
+var rollValue;
 var userBalance = 5;
 var balance = document.getElementById("balance"); 
 var currentTurn = 0;
 var turnCount = document.getElementById("turnCount");
 var status = document.getElementById("status");
-var message = "GAME OVER!";
+var message = 'Roll the dice!';
+console.log(`state message is: ${message}`);
 var ButtonBet = document.getElementById("ButtonBet");
-status.style.display = 'none';
 
 function buttonClicked() {
     if (userBalance > 0) { // checking that the userBalance is greater than 0 (#5 of homework)
+        status.innerHTML = message; // the current message is not displaying on the page... What's missing, wrong, or missing
 
         // ====================================================================================
         // #1 of homework instructions - calculate 2 random integers for the dice.
@@ -103,7 +104,9 @@ function buttonClicked() {
         turnCount.innerHTML = currentTurn;
         if (userBalance === 0) {
             ButtonBet.style.display = 'none'; // hides the button however it hides if after one more click
-            status.style.display = 'block'; // the message is not displaying
+            message = 'GAME OVER!';
+            console.log(`new message is: ${message}`); // var message changed accordingly
+            status.innerHTML = message; // what's stopping the new message from displaying on the main page?
         }
     } // end of main if statement
 } // end of buttonClicked function
