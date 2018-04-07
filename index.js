@@ -22,10 +22,7 @@ function buttonClicked() {
     // ====================================================================================
     // #3 of homework - determine win/lose for each roll and display win/lose text.
     // ====================================================================================
-    //      Must leave these variables here, don't know why. If these variables are moved to either
-    //      the top of the function or the top of the script, the code breaks. This would be
-    //      a good code block to put in a function too. I did not do that though in case you
-    //      would like to try, for practice. If not, no worries, it's not required in the assignment.
+
     var winOrLose;
     var rollValue = dice1 + dice2;
     var balance = document.getElementById("balance").innerHTML;
